@@ -1,0 +1,13 @@
+.delete-note-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-note-btn:hover {
+    background-color: #c82333;
+}
