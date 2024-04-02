@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 3001;
 const cors = require('cors');
 app.use(cors());
 
+app.use('/home', express.static('build'));
+
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://abisheknaagendra01:msMOXXSlYBuf8P56@taskphinnotes.42ruowl.mongodb.net/taskphin?retryWrites=true&w=majority&appName=TaskphinNotes', {
     useNewUrlParser: true,
