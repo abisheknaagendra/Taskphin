@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export const fetchNotes = createAsyncThunk('notes/fetchNotes', async () => {
     try {
-        const response = await axios.get('http://localhost:3001/notes');
+        const response = await axios.get('/notes');
         return response.data;
     } catch (e) {
         console.error(e);
@@ -15,7 +15,7 @@ export const fetchNotes = createAsyncThunk('notes/fetchNotes', async () => {
 export const createNote = createAsyncThunk<Note, string>(
     'notes/createNote',
     async (content: string) => {
-        const response = await axios.post<Note>('http://localhost:3001/notes', { content });
+        const response = await axios.post<Note>('/notes', { content });
         return response.data;
     }
 );
@@ -23,7 +23,7 @@ export const createNote = createAsyncThunk<Note, string>(
 export const updateNote = createAsyncThunk<Note, { id: string; content: string }>(
     'notes/updateNote',
     async ({ id, content }: { id: string; content: string }) => {
-        const response = await axios.patch<Note>(`http://localhost:3001/notes/${id}`, { content });
+        const response = await axios.patch<Note>(`/notes/${id}`, { content });
         return response.data;
     }
 );
@@ -31,7 +31,7 @@ export const updateNote = createAsyncThunk<Note, { id: string; content: string }
 export const deleteNote = createAsyncThunk<{ _id: string, message: string }, string>(
     'notes/deleteNote',
     async (id: string) => {
-        const response = await axios.delete(`http://localhost:3001/notes/${id}`);
+        const response = await axios.delete(`/notes/${id}`);
         return response.data;
     }
 );

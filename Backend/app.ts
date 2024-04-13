@@ -23,6 +23,10 @@ app.use(bodyParser.json());
 app.use('/home', express.static('build'));
 
 // Routes
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
 app.get('/notes', async (_req: Request, res: Response) => {
     try {
         const notes = await Note.find();

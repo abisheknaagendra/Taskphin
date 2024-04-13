@@ -55,5 +55,5 @@
   "devDependencies": {
     "@types/dompurify": "^3.0.5"
   },
-  "homepage": "https://localhost:3001/home"
+  "homepage": "/home"
 }
